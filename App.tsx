@@ -7,12 +7,15 @@ import {
   Poppins_500Medium,
   useFonts
 } from '@expo-google-fonts/poppins';
-
+import { NavigationContainer, StackActions } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import theme from './src/global/styles/theme';
-
 import {Dashboard} from './src/screens/Dashboard';
-
 import {Loading} from './src/components/Loading';
+import Start from './src/screens/Start';
+import TabbedHome from './src/screens/TabbedHome';
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
 
@@ -24,16 +27,23 @@ export default function App() {
 
   if(!fontsLoaded){
     return (
-      <ThemeProvider theme={theme}>
-        <Loading />
-      </ThemeProvider>
+      <NavigationContainer>
+        <ThemeProvider theme={theme}>
+          <Loading />
+        </ThemeProvider>
+      </NavigationContainer>
     );
     
   }
 
   return (
     <ThemeProvider theme={theme}>
-      <Dashboard />
+      <NavigationContainer>
+        <Stack.Navigator screenOptions={{headerShown: false}}>
+          <Stack.Screen name='Start' component={Start} />
+          <Stack.Screen name='Home' component={TabbedHome}  />
+        </Stack.Navigator>
+      </NavigationContainer>
     </ThemeProvider>
   );
 }
