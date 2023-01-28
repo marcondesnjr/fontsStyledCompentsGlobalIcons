@@ -14,6 +14,7 @@ import {Dashboard} from './src/screens/Dashboard';
 import {Loading} from './src/components/Loading';
 import Start from './src/screens/Start';
 import TabbedHome from './src/screens/TabbedHome';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const Stack = createNativeStackNavigator();
 
@@ -38,12 +39,12 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <NavigationContainer>
-        <Stack.Navigator screenOptions={{headerShown: false}}>
-          <Stack.Screen name='Start' component={Start} />
-          <Stack.Screen name='Home' component={TabbedHome}  />
-        </Stack.Navigator>
-      </NavigationContainer>
+        <NavigationContainer>
+          <Stack.Navigator screenOptions={{headerShown: false}}>
+            <Stack.Screen name='Start' component={Start} />
+            <Stack.Screen name='Home' component={TabbedHome}  />
+          </Stack.Navigator>
+        </NavigationContainer>
     </ThemeProvider>
   );
 }

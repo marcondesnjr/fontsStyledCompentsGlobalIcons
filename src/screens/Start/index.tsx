@@ -3,6 +3,7 @@ import {Button, Image, Text} from 'react-native'
 import { ButtonText, ButtonView, Container, Header, IntroText, IntroView, OpenButton } from './styled'
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { useNavigation } from '@react-navigation/native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 
 export default function Start() {
