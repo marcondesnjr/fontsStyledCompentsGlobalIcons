@@ -45,3 +45,27 @@ export const data:DataProps[] = [
     date:'10/04/2020'
   },
 ]
+
+export interface CategoryProps{
+  name: string,
+  total: string
+}
+
+export const categoryData:CategoryProps[] = [
+  {
+    name: "Casa",
+    total: "1.200"
+  },
+  {
+    name: "Carro",
+    total: "700"
+  },
+  {
+    name: "Alimentação",
+    total: "500"
+  },
+  {
+    name: "Alimentação",
+    total: "500"
+  }
+]

@@ -35,7 +35,7 @@ export const ButtonView = styled.View`
 `
 
 export const CategoryView = styled.View`
-   height: 56;
+   height: 56px;
    background-color: ${({theme})=> theme.colors.shape};
    border-radius: 5px;
    margin-top: 16px;
